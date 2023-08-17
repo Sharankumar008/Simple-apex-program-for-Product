@@ -1,0 +1,34 @@
+//Creating objects and Displaying Output using return type
+
+ProductDemo objProductDemo=new ProductDemo(101,'AC',30,20000,5);
+objProductDemo.searchProduct(101);
+String productDetails=objProductDemo.searchProduct(101);
+System.debug(productDetails);
+
+objProductDemo.Billing(101,2);
+String total=objProductDemo.Billing(101,2);
+System.debug(total);
+
+objProductDemo.reorderStock();
+String reorderStock=objProductDemo.reorderStock();        
+System.debug(reorderStock);
+
+
+//Creating List and Displaying Output
+
+List<ProductDemo> productList=new List<ProductDemo>{
+new ProductDemo(101,'AC',30,20000,5),
+new ProductDemo(102,'TV',30,25000,5),
+new ProductDemo(103,'WM',30,30000,5)
+};
+
+for(ProductDemo product:productList){
+Integer inputCode=101;
+Integer inputQuantity=2;
+if(product.code==inputCode){
+product.searchProduct(inputCode);
+product.Billing(inputCode,inputQuantity);
+product.reorderStock();
+break;
+}
+}
