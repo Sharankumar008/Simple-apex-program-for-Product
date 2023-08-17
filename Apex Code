@@ -1,0 +1,59 @@
+public class ProductDemo{
+    
+    public integer code;
+    string p_name;
+    integer stock;
+    integer price; 
+    integer discount;
+    
+    
+    
+    public ProductDemo(integer code,string p_name, integer stock, integer price,integer discount){
+        this.code=code;
+        this.p_name=p_name;
+        this.stock=stock;
+        this.price=price;
+        this.discount=discount;
+    }
+    
+    public String searchProduct(integer Code){
+        String productDetails;
+        if(this.code==code){
+            
+            productDetails='Product Name: '+p_name+ ' Price: '+price+ ' Stock:'+stock;
+        }
+        
+        else{
+            productDetails='No product Available';
+        }
+        return productDetails;
+    }
+    public String Billing(integer code,integer quantity){
+        String result;
+        if(this.code==code){
+            if(stock>=quantity){
+                stock=stock-quantity;
+                integer totalPrice=(price*quantity)-(((price)*discount/100)*quantity);
+                result='product name: ' +p_name+ ', quantity: '+quantity+ ', total Price: '+totalPrice;  
+                return result;
+            }
+            else{
+                return 'No Stock Available';
+            }
+        }
+        else{
+            return 'No product Available';
+        }
+        
+    }
+    public String reorderStock(){
+        string reorder;
+        if(stock<=20){
+            reorder='Reorder the Stock for '+p_name;
+        }
+        else{
+            reorder='Stock Available for '+p_name;
+        }
+        return reorder;
+    }
+}
